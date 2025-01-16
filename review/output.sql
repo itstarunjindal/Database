@@ -1,4 +1,13 @@
+QUERY: You are tasked with designing a database for a library system. The database should track books, members, and borrowing activities.
+
 CREATE DATABASE
+
+QUERY: DDL (Data Definition Language):
+   * Create the following tables:
+     * Books with columns: book_id, title, author, publication_year, genre.
+     * Members with columns: member_id, name, address, contact_number.
+     * Borrowings with columns: borrowing_id, book_id, member_id, borrow_date, due_date, returned_date.
+
 CREATE TABLE
 CREATE TABLE
                   List of relations
@@ -77,6 +86,9 @@ Foreign-key constraints:
     "borrowing_book_id_fkey" FOREIGN KEY (book_id) REFERENCES books(book_id)
     "borrowing_member_id_fkey" FOREIGN KEY (member_id) REFERENCES members(member_id)
 
+QUERY: * DML (Data Manipulation Language):
+   * Insert sample data into each table (at least 5 records per table).
+
 INSERT 0 2
 INSERT 0 3
  book_id | title | author | publication_year |  genre   
@@ -110,11 +122,16 @@ INSERT 0 4
             5 |       1 |         5 |          15 |       30 |            27
 (5 rows)
 
+Retrieve all books by a specific author.
+
  book_id | title | author | publication_year | genre  
 ---------+-------+--------+------------------+--------
        1 | book1 | a1     |             2020 | action
        3 | book3 | a1     |             2024 | action
 (2 rows)
+
+
+
 
  book_id | title | author | publication_year | genre 
 ---------+-------+--------+------------------+-------
@@ -124,6 +141,10 @@ INSERT 0 4
  book_id | title | author | publication_year | genre 
 ---------+-------+--------+------------------+-------
 (0 rows)
+
+
+QUERY: Find members who have borrowed a particular book.
+
 
  member_id 
 -----------
